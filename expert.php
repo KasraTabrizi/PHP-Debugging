@@ -18,7 +18,7 @@ function new_exercise($x) {
     echo $block;
 
 }
-
+/*****************************************************************************************/
 new_exercise(2);
 // === Exercise 2 ===
 // Below we create a week array with all days of the week.
@@ -33,3 +33,13 @@ $week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "su
 $monday = $week[0];
 
 echo $monday;
+/*****************************************************************************************/
+new_exercise(3);
+// === Exercise 3 ===
+// This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
+// === PROBLEM ===
+// the first item in an array always starts at index 0 so when we chose index 1, it will print tuesday
+// === SOLUTION ===
+// select index 0 to get monday
+$str = “Debugged ! Also very fun”;
+echo substr($str, 0, 10);
