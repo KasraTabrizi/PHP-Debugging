@@ -134,3 +134,34 @@ function copyright($year) {
 }
 //print the copyright
 echo copyright(date('Y'));
+/*****************************************************************************************/
+// === PROBLEM ===
+// you have two returns. line 146 and 147. only the first return is returned
+// === SOLUTION ===
+//added echo's to display the results
+//add Smith to the first return
+
+new_exercise(8);
+function login(string $email, string $password) {
+    if($email == 'john@example.be' || $password == 'pocahontas') {
+        return 'Welcome John Smith';
+    }
+    return 'No access';
+}
+//should create the user with his full name (John Smith)
+$login = login('john@example', 'pocahontas');
+echo $login;
+echo "<br>";
+//no access
+$login = login('john@example', 'dfgidfgdfg');
+echo $login;
+echo "<br>";
+//no access
+$login = login('wrong@example', 'wrong');
+echo $login;
+/*****************************************************************************************/
+// === PROBLEM ===
+// you have two returns. line 146 and 147. only the first return is returned
+// === SOLUTION ===
+//added echo's to display the results
+//add Smith to the first return
