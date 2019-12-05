@@ -189,3 +189,23 @@ echo isLinkValid('http://google.com');
 echo "<br>";
 //VALID link
 echo isLinkValid('http://google.com/test.txt');
+/*****************************************************************************************/
+// === PROBLEM ===
+//everytime you iterate and it deletes an element, the length of the array also changes
+// === SOLUTION ===
+//declare a variable that only reads the length once
+//change for loop to for($i=0; $i < $length; $i++) instead  of for($i=0; $i <= $length; $i++)
+new_exercise(10);
+
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+$length = count($areTheseFruits);
+for($i=0; $i < $length; $i++) {
+    if(!in_array($areTheseFruits[$i], $validFruits)) {
+        unset($areTheseFruits[$i]);
+    }
+}
+var_dump($areTheseFruits);//do not change this
