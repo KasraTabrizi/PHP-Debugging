@@ -161,7 +161,31 @@ $login = login('wrong@example', 'wrong');
 echo $login;
 /*****************************************************************************************/
 // === PROBLEM ===
-// you have two returns. line 146 and 147. only the first return is returned
+//the strpos gives us the value 0 when checks for https. the 0 is the index of the string in which
+//the match is found but 0 is also false in boolean terms so when you check it with true it will give your a false
 // === SOLUTION ===
-//added echo's to display the results
-//add Smith to the first return
+// change the if condition to $test > -1 so that it also takes index 0 in a string into account
+new_exercise(9);
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        $test = strpos($link, $unacceptable); 
+        if ($test > -1) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+echo "<br>";
+//invalid link
+echo isLinkValid('http://www.google.com/hack.pdf');
+echo "<br>";
+//invalid link
+echo isLinkValid('https://google.com');
+echo "<br>";
+//VALID link
+echo isLinkValid('http://google.com');
+echo "<br>";
+//VALID link
+echo isLinkValid('http://google.com/test.txt');
