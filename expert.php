@@ -50,10 +50,11 @@ new_exercise(4);
 // The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
 // Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
 // === PROBLEM ===
-// thw wrond double quotation marks were used
+// the $day inside the foreach loop was not preceded with the '&'. by adding the &, you will reference to the array and
+// so any changes in the loop will affect the array
 // === SOLUTION ===
-// used the right double quotation marks
-foreach($week as $day) {
+// add a '&' before the $day in the foreach loop
+foreach($week as &$day) {
     $day = substr($day, 0, strlen($day)-3);
 }
 
