@@ -122,3 +122,15 @@ function randomHeroName($nameOrder)
 
 echo "Here is the name: " . combineNames();
 /*****************************************************************************************/
+// === PROBLEM ===
+//int $year was passed as an argument whereas date('Y') is a string
+// === SOLUTION ===
+//deleted the int
+//added echo to the line 136
+new_exercise(7);
+
+function copyright($year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright(date('Y'));
