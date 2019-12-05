@@ -38,8 +38,24 @@ new_exercise(3);
 // === Exercise 3 ===
 // This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
 // === PROBLEM ===
-// the first item in an array always starts at index 0 so when we chose index 1, it will print tuesday
+// the wrong double quotation marks were used
 // === SOLUTION ===
-// select index 0 to get monday
-$str = “Debugged ! Also very fun”;
+// used the right double quotation marks
+$str = "Debugged ! Also very fun";
 echo substr($str, 0, 10);
+/*****************************************************************************************/
+new_exercise(4);
+// === Exercise 4 ===
+// Sometimes debugging code is just like looking up code and syntax...
+// The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
+// Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
+// === PROBLEM ===
+// thw wrond double quotation marks were used
+// === SOLUTION ===
+// used the right double quotation marks
+foreach($week as $day) {
+    $day = substr($day, 0, strlen($day)-3);
+}
+
+print_r($week);
+/*****************************************************************************************/
